@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'sessions#new'
 	get '/signup' => 'users#new'
 	#root "pages#signup"
 	post "users" => "users#create"
