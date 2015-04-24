@@ -4,11 +4,11 @@ class BoardsController < ApplicationController
 		@boards = Board.all
 	end
 
-	def new
+	def new_board
 		@board = Board.new
 	end
 
-	def create
+	def create_board
 		@board = Board.new(board_params)
 			if @board.save
 				redirect_to boards_path
