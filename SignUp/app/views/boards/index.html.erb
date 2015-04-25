@@ -29,20 +29,28 @@
 <div class="container">
   <tbody>
 
-<!-- -->
-
-
     <table class="col-md-12 table table-bordered">
       <tr class="active">
         <th>Lobby</th>
       </tr>
       </table>
+  <% @boards.each do |board| %>
         <table class="col-md-12 table table-hover">
           <tr class="table">
             <td><%= image_tag "galogo_thumb.png" %></td>
-            <td><a href="/boards/welcome">WELCOME TO GENERAL ASSEMBLY!</a><br><p>Post here and introduce yourself!</p></td>
+            <td><%= link_to board.title %><br><%= board.description %></td>
           </tr>
         </table>
+  <% end %>
+
+
+        <table class="col-md-12 table table-hover">
+          <tr class="table">
+            <td><%= image_tag "galogo_thumb.png" %></td>
+            <td><a href="#">WELCOME TO GENERAL ASSEMBLY!</a><br><p>Post here and introduce yourself!</p></td>
+          </tr>
+        </table>
+
         <table class="col-md-12 table table-bordered">
           <tr class="active" >
             <th>Full-Time Courses</th>
@@ -51,7 +59,8 @@
         <table class="col-md-12 table table-hover">
           <tr class="table">
             <td><%= image_tag "galogo_thumb.png" %></td>
-            <td><a href="#">Web Development Immersive</a><p>Post here about anything WDI related!</p></td>
+            <!-- <td><a href="#">Web Development Immersive</a><p>Post here about anything WDI related!</p></td> -->
+            <td><%= link_to "Web Development Immersive", posts_path %><p>Post here about anything WDI related!</p></td>
           </tr>
           <tr class="table">
             <td><%= image_tag "galogo_thumb.png" %></td>

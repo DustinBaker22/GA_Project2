@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-	resources :boards do
-		resources :wdi
-	end
 
+	resources :boards
+	resources :posts
 
+  root :to => 'sessions#new'
 	get '/signup' => 'users#new'
 	#root "pages#signup"
 	post "users" => "users#create"
@@ -14,11 +14,9 @@ Rails.application.routes.draw do
 	get "/login" => "sessions#new"
 	post "/login" => "sessions#create"
 	get "/logout" => "sessions#destroy"
-
-  # get '/forums' => "boards#forums"
-  # get 'boards' => 'boards#index'
-  # get '/new_board' => 'boards#new_board'
-  # post '/forums' => 'boards#create'
-   # get '/board/:id' => 'boards#show', as: :board
+  get '/forums' => "boards#forums"
+  get 'boards' => 'boards#index'
+  get '/new_board' => 'boards#new_board'
+  post '/forums' => 'boards#create'
 
 end

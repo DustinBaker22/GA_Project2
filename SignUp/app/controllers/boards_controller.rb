@@ -20,11 +20,13 @@ class BoardsController < ApplicationController
 
 	def show
 		@board = board.find(params[:id])
-		@thread = Thread.new
-		@threads = @board.threads
+		# @thread = Thread.new
+		# @threads = @board.threads
 	end
 
+	def wdi
 
+	end
 
 private
 
