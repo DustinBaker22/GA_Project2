@@ -3,19 +3,22 @@
 		<div class="row-fluid">
 		<div class= "span4">
 			<div class="col-md-7">
-			<h1>Login</h1>
 
-			<%= form_tag('/login', method: :post) do %>
+      <h1>Login</h1>
+
+      <%= form_tag('/login', method: :post) do %>
 				<div class="form-group">
-					<p>Email: <%= text_field_tag :email, nil, :class => 'inputBox' %></p>
+					<p>Email<br><%= text_field_tag :email, nil, :class => 'inputBox' %></p>
 				</div>
 				<div class="form-group">
-					<p>Password:  <%= password_field_tag :password, nil, :class => 'inputBox' %></p>
+					<p>Password<br><%= password_field_tag :password, nil, :class => 'inputBox' %></p>
 				</div>
 					<button class="btn btn-default" type="submit" id="loginBtn">Login</button><br><br>
 					<a class="btn btn-default" href="/signup" role="button" id="signupBtn">SignUp</a>
-			<% end %>
-			</div>
+
+      <% end %>
+
+      </div>
 		</div>
 		</div>
 	</div>

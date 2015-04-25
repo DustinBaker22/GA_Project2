@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
 		@boards = Board.all
 	end
 
+
 	def new
 		@board = Board.new
 	end
@@ -11,7 +12,7 @@ class BoardsController < ApplicationController
 	def create
 		@board = Board.new(board_params)
 			if @board.save
-				redirect_to boards_path
+				redirect_to forums_path
 			else
 				render "new"
 			end
@@ -22,6 +23,8 @@ class BoardsController < ApplicationController
 		@thread = Thread.new
 		@threads = @board.threads
 	end
+
+
 
 private
 

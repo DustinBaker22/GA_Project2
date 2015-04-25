@@ -1,5 +1,6 @@
 class Board < ActiveRecord::Base
 	has_many :threads
+  belongs_to :user
 
 	def thread_count
 	end

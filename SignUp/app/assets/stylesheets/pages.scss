@@ -5,14 +5,19 @@
 @import 'bootstrap';
 
 html, body {
- padding: 0;
- font-family: 'Montserrat', sans-serif;
- color: white;
+  padding: 0;
+  font-family: PFDinTextCompPro-Bold, Montserrat, sans-serif;
+  color: white;
 }
 
 body {
- background: url('codeblur.jpg') no-repeat;
- background-size: cover;
+  font-family: PFDinTextCompPro-Bold, Montserrat, sans-serif;
+  background: url('codeblur.jpg') no-repeat;
+  background-size: cover;
+}
+
+#cont {
+  overflow: auto;
 }
 
 div .container {
@@ -20,6 +25,7 @@ div .container {
 }
 
 .header {
+	margin-top: 50px;
  text-align: center;
 }
 
@@ -53,6 +59,10 @@ span {
 .main h1 {
  font-size: 50px;
  /*margin-bottom: 20px;*/
+}
+
+.white {
+	color: white;
 }
 
 .inputBox {
@@ -90,7 +100,8 @@ form button {
 }
 
 .footer .container {
- position: absolute;
+ position: relative;
+ float: bottom;
  bottom: 0;
  border-top: 1px solid #fff;
  padding-top: 20px;
