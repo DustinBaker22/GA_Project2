@@ -1,0 +1,12 @@
+<h1>Edit this thread</h1>
+
+<%= form_for @anypost do |f| %>
+
+  Title:<br> <%= f.text_field :title %>
+  Description:<br> <%= f.text_field :body %>
+
+  <%= f.submit "Edit Thread!" %>
+
+<% end %>
+
+<%= link_to "Back to Anything Goes", anyposts_path %>

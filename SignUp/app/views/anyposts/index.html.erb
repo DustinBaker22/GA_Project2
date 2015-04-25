@@ -1,9 +1,17 @@
+<h1>Off-Topic > Anything Goes!</h1>
+
 <%= link_to "Create post", new_anypost_path %>
+<tbody>
+
+  <tr>
 <div class="panel panel-default">
 <% @anyposts.each do |anypost| %>
-  <div class="panel-heading"><%= anypost.title %></div>
-  <div class="panel-body">
+  <td><div class="panel-heading"><%= anypost.title %><%= link_to "Edit this thread", edit_anypost_path(anypost) %><%= link_to "Delete this thread!", anypost, method: :delete, data: {confirm: "Are you sure you want to delete this thread?"} %></div></td>
+  <td><div class="panel-body">
      <%= anypost.body %>
-  </div>
+  </div></td>
   <% end %>
 </div>
+</tr>
+
+</tbody>

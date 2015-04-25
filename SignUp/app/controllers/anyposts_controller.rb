@@ -16,6 +16,25 @@ class AnypostsController < ApplicationController
       end
   end
 
+  def edit
+    @anypost = Anypost.find(params[:id])
+  end
+
+  def update
+    @anypost = Anypost.find(params[:id])
+
+    if @anypost.update_attributes(anypost_params)
+      redirect_to anyposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @anypost = Anypost.find(params[:id])
+    @anypost.destroy
+    redirect_to anyposts_path
+  end
 
       private
 

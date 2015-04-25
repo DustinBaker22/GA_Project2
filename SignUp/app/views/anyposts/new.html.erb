@@ -1,4 +1,4 @@
-<h1>create new post</h1>
+<h1>Off-Topic > Anything Goes! > Create</h1>
 
 
 <%= form_for @anypost do |f| %>
@@ -6,3 +6,5 @@
   <%= f.text_field :body %>
   <%= f.submit 'submit', class:"button" %>
 <% end %>
+
+<%= link_to "Talk About Everything", anyposts_path %>

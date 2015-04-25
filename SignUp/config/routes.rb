@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-	resources :boards, :posts, :welcomeposts, :wdiposts, :uxdiposts
+	resources :boards, :posts, :welcomeposts, :wdiposts, :uxdiposts, :dmposts, :fewdposts, :pmposts, :dsposts, :bdsposts, :vdposts, :mdposts, :uxdposts, :anyposts, :jobposts
 
 
   root :to => 'sessions#new'
@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   get 'boards' => 'boards#index'
   get '/new_board' => 'boards#new_board'
   post '/forums' => 'boards#create'
+
+
+  patch "anyposts/:id" => "anyposts#update"
+  delete "anyposts/:id" => "anyposts#destroy"
 
 end

@@ -2,7 +2,7 @@
 
 <%= link_to "Create post", new_dmpost_path %>
 <div class="panel panel-default">
-<% @dmposts.each do |post| %>
+<% @dmposts.each do |dmpost| %>
   <div class="panel-heading"><%= dmpost.title %></div>
   <div class="panel-body">
      <%= dmpost.body %>
