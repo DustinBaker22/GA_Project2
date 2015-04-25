@@ -1,0 +1,9 @@
+<%= link_to "Create Thread", new_wdipost_path %>
+<div class="panel panel-default">
+<% @wdiposts.each do |post| %>
+  <div class="panel-heading"><%= wdipost.title %></div>
+  <div class="panel-body">
+     <%= wdipost.body %>
+  </div>
+  <% end %>
+</div>

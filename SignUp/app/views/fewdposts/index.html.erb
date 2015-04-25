@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_fewdpost_path %>
+<div class="panel panel-default">
+<% @fewdposts.each do |fewdpost| %>
+  <div class="panel-heading"><%= fewdpost.title %></div>
+  <div class="panel-body">
+     <%= fewdpost.body %>
+  </div>
+  <% end %>
+</div>

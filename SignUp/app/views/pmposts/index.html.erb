@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_pmpost_path %>
+<div class="panel panel-default">
+<% @pmposts.each do |pmpost| %>
+  <div class="panel-heading"><%= pmpost.title %></div>
+  <div class="panel-body">
+     <%= pmpost.body %>
+  </div>
+  <% end %>
+</div>

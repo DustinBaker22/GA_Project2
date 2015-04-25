@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_vdpost_path %>
+<div class="panel panel-default">
+<% @vdposts.each do |vdpost| %>
+  <div class="panel-heading"><%= vdpost.title %></div>
+  <div class="panel-body">
+     <%= vdpost.body %>
+  </div>
+  <% end %>
+</div>

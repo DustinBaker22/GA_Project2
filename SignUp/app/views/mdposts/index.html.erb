@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_mdpost_path %>
+<div class="panel panel-default">
+<% @mdposts.each do |mdpost| %>
+  <div class="panel-heading"><%= mdpost.title %></div>
+  <div class="panel-body">
+     <%= mdpost.body %>
+  </div>
+  <% end %>
+</div>

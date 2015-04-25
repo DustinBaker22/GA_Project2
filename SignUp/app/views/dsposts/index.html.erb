@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_dspost_path %>
+<div class="panel panel-default">
+<% @dsposts.each do |dspost| %>
+  <div class="panel-heading"><%= dspost.title %></div>
+  <div class="panel-body">
+     <%= dspost.body %>
+  </div>
+  <% end %>
+</div>

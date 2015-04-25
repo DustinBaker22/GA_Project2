@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_anypost_path %>
+<div class="panel panel-default">
+<% @anyposts.each do |anypost| %>
+  <div class="panel-heading"><%= anypost.title %></div>
+  <div class="panel-body">
+     <%= anypost.body %>
+  </div>
+  <% end %>
+</div>

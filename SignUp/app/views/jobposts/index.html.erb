@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_jobpost_path %>
+<div class="panel panel-default">
+<% @jobposts.each do |jobpost| %>
+  <div class="panel-heading"><%= jobpost.title %></div>
+  <div class="panel-body">
+     <%= jobpost.body %>
+  </div>
+  <% end %>
+</div>

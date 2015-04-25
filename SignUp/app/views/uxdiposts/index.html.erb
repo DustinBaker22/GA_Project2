@@ -1,0 +1,9 @@
+<%= link_to "Create post", new_uxdipost_path %>
+<div class="panel panel-default">
+<% @uxdiposts.each do |post| %>
+  <div class="panel-heading"><%= uxdipost.title %></div>
+  <div class="panel-body">
+     <%= uxdipost.body %>
+  </div>
+  <% end %>
+</div>
