@@ -16,6 +16,26 @@ class WdipostsController < ApplicationController
       end
   end
 
+  def edit
+    @wdipost = Wdipost.find(params[:id])
+  end
+
+  def update
+    @wdipost = Wdipost.find(params[:id])
+
+    if @wdipost.update_attributes(wdipost_params)
+      redirect_to wdiposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @wdipost = Wdipost.find(params[:id])
+    @wdipost.destroy
+    redirect_to wdiposts_path
+  end
+
 
       private
 

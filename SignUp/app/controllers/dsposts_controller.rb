@@ -16,6 +16,26 @@ class DspostsController < ApplicationController
       end
   end
 
+  def edit
+    @dspost = Dspost.find(params[:id])
+  end
+
+  def update
+    @dspost = Dspost.find(params[:id])
+
+    if @dspost.update_attributes(dspost_params)
+      redirect_to dsposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @dspost = Dspost.find(params[:id])
+    @dspost.destroy
+    redirect_to dsposts_path
+  end
+
 
       private
 

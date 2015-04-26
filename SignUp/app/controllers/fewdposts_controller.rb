@@ -16,6 +16,26 @@ class FewdpostsController < ApplicationController
       end
   end
 
+  def edit
+    @fewdpost = Fewdpost.find(params[:id])
+  end
+
+  def update
+    @fewdpost = Fewdpost.find(params[:id])
+
+    if @fewdpost.update_attributes(fewdpost_params)
+      redirect_to fewdposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @fewdpost = Fewdpost.find(params[:id])
+    @fewdpost.destroy
+    redirect_to fewdposts_path
+  end
+
 
       private
 

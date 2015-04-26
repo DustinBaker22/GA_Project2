@@ -16,6 +16,26 @@ class WelcomepostsController < ApplicationController
       end
   end
 
+  def edit
+    @welcomepost = Welcomepost.find(params[:id])
+  end
+
+  def update
+    @welcomepost = Welcomepost.find(params[:id])
+
+    if @welcomepost.update_attributes(welcomepost_params)
+      redirect_to welcomeposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @welcomepost = welcomepost.find(params[:id])
+    @welcomepost.destroy
+    redirect_to welcomeposts_path
+  end
+
 
       private
 

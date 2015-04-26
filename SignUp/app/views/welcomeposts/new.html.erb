@@ -26,11 +26,16 @@
   </div>
 </nav>
 
-<h1>Create a new thread</h1>
+<div class="container">
+  <span class="white"><h3><%=link_to "Off-Topic", boards_path %> > <%= link_to "Welcome", welcomeposts_path %> > <%= link_to "Create", welcomeposts_path %></h3></span><br>
 
-
-<%= form_for @welcomepost do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :body %>
-  <%= f.submit 'submit', class:"button" %>
-<% end %>
+<!-- Create New Thread Form -->
+  <%= form_for @welcomepost do |f| %>
+    <%= link_to "Go Back", welcomeposts_path, class:"pull-right btn btn-primary " %><br><br>
+    <span class="white">Title</span><br>
+      <%= f.text_field :title, class:"form-control" %><br>
+    <span class="white">Message</span><br>
+    <%= f.text_field :body, class:"form-control" %>
+      <br></textarea>
+      <%= f.submit 'submit', class:"button" %>
+  <% end %>

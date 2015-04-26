@@ -1,3 +1,4 @@
+<!-- Navigation Bar -->
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <div class="navbar-header">
@@ -26,12 +27,19 @@
   </div>
 </nav>
 
-<%= link_to "Create post", new_welcomepost_path %>
-<div class="panel panel-default">
-<% @welcomeposts.each do |welcomepost| %>
-  <div class="panel-heading"><%= welcomepost.title %></div>
-  <div class="panel-body">
-     <%= welcomepost.body %>
+
+<!-- Header and Location -->
+<div class="container">
+  <span class="white"><h1>Welcome To General Assembly!</h1>
+    <h3><%=link_to "Off-Topic", boards_path %> > <%= link_to "Welcome", welcomeposts_path %><span class="pull-right"><%= link_to "Create post", new_welcomepost_path, class:"btn btn-primary" %></span></h3></span>
+
+<!-- Threads -->
+  <div class="panel panel-default">
+    <% @welcomeposts.each do |welcomepost| %>
+      <div class="panel-heading"><%= welcomepost.title %><span class="pull-right"><%= link_to "  ", edit_welcomepost_path(welcomepost), class:"glyphicon glyphicon-pencil" %><span class="spacing"></span><%= link_to "  ", welcomepost, method: :delete, data: {confirm: "Are you sure you want to delete this thread?"}, class:"glyphicon glyphicon-trash" %></span></div>
+      <div class="panel-body">
+      <%= welcomepost.body %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>

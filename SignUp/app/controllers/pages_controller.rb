@@ -2,24 +2,31 @@ class PagesController < ApplicationController
 before_action :require_user, except: [:contact, :help]
 before_action :require_admin, only: [:help]
 
-def index
+  def index
 
-end
+  end
 
-def signup
+  def signup
 
-end
+  end
 
-def about
+  def about
 
-end
+  end
 
-def contact
+  def contact
 
-end
+  end
 
-def help
+  def help
 
-end
+  end
+
+  def maps
+    url = 'https://maps.googleapis.com/maps/api/js?key='
+    key = ENV['GOOGLE_MAPS']
+    @endpoint = url + key
+  end
+
 
 end

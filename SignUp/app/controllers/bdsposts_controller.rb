@@ -1,14 +1,14 @@
 class BdspostsController < ApplicationController
   def index
-    @bdsposts = Bdsost.all
+    @bdsposts = Bdspost.all
   end
 
   def new
-    @bdspost = Bdsost.new
+    @bdspost = Bdspost.new
   end
 
   def create
-    @bdspost = Bdsost.new(bdspost_params)
+    @bdspost = Bdspost.new(bdspost_params)
       if @bdspost.save
         redirect_to bdsposts_path
       else
@@ -16,6 +16,25 @@ class BdspostsController < ApplicationController
       end
   end
 
+  def edit
+    @bdspost = Bdspost.find(params[:id])
+  end
+
+  def update
+    @bdspost = Bdspost.find(params[:id])
+
+    if @bdspost.update_attributes(bdspost_params)
+      redirect_to bdsposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @bdspost = Bdspost.find(params[:id])
+    @bdspost.destroy
+    redirect_to bdsposts_path
+  end
 
       private
 

@@ -16,6 +16,26 @@ class UxdipostsController < ApplicationController
       end
   end
 
+  def edit
+    @uxdipost = Uxdipost.find(params[:id])
+  end
+
+  def update
+    @uxdipost = Uxdipost.find(params[:id])
+
+    if @uxdipost.update_attributes(uxdipost_params)
+      redirect_to uxdiposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @uxdipost = Uxdipost.find(params[:id])
+    @uxdipost.destroy
+    redirect_to uxdiposts_path
+  end
+
 
       private
 

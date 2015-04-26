@@ -16,6 +16,26 @@ class PmpostsController < ApplicationController
       end
   end
 
+  def edit
+    @pmpost = Pmpost.find(params[:id])
+  end
+
+  def update
+    @pmpost = Pmpost.find(params[:id])
+
+    if @pmpost.update_attributes(pmpost_params)
+      redirect_to pmposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @pmpost = Pmpost.find(params[:id])
+    @pmpost.destroy
+    redirect_to pmposts_path
+  end
+
 
       private
 

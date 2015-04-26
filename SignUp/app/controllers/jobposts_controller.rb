@@ -16,6 +16,26 @@ class JobpostsController < ApplicationController
       end
   end
 
+  def edit
+    @jobpost = Jobpost.find(params[:id])
+  end
+
+  def update
+    @jobpost = Jobpost.find(params[:id])
+
+    if @jobpost.update_attributes(jobpost_params)
+      redirect_to jobposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @jobpost = Jobpost.find(params[:id])
+    @jobpost.destroy
+    redirect_to jobposts_path
+  end
+
 
       private
 

@@ -16,6 +16,26 @@ class MdpostsController < ApplicationController
       end
   end
 
+  def edit
+    @mdpost = Mdpost.find(params[:id])
+  end
+
+  def update
+    @mdpost = Mdpost.find(params[:id])
+
+    if @mdpost.update_attributes(mdpost_params)
+      redirect_to mdposts_path
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @mdpost = Mdpost.find(params[:id])
+    @mdpost.destroy
+    redirect_to mdposts_path
+  end
+
 
       private
 
