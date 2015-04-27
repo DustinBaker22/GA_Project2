@@ -31,7 +31,7 @@ class WelcomepostsController < ApplicationController
   end
 
   def destroy
-    @welcomepost = welcomepost.find(params[:id])
+    @welcomepost = Welcomepost.find(params[:id])
     @welcomepost.destroy
     redirect_to welcomeposts_path
   end
